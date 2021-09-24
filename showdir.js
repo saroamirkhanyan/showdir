@@ -5,7 +5,7 @@ const formatBytes = require('./lib/formatBytes.js')
 
 function showdir(dir, spaces = 0) {
 	const TAB = ' '.repeat(spaces)
-	let result = TAB + `${dir.name}\n`
+	let result = TAB + `${dir.name} ${formatBytes(dir.size)}\n`
 
 	dir.directories.forEach(subDir => {
 		result += showdir(subDir, spaces + 4)
